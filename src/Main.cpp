@@ -12,10 +12,10 @@ int main()
 	// in Windows at least, this must be called before creating the window
 	float screenScalingFactor = platform.getScreenScalingFactor(window.getSystemHandle());
 	// Use the screenScalingFactor
-	window.create(sf::VideoMode(200.0f * screenScalingFactor, 200.0f * screenScalingFactor), "SFML works!");
+	window.create(sf::VideoMode(400.0f * screenScalingFactor, 400.0f * screenScalingFactor), "SFML works!");
 	platform.setIcon(window.getSystemHandle());
 
-	sf::CircleShape shape(window.getSize().x);
+	sf::CircleShape shape(window.getSize().x/2);
 	shape.setFillColor(sf::Color::White);
 
 	sf::Texture shapeTexture;
