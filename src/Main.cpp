@@ -15,7 +15,7 @@ int main()
 	window.create(sf::VideoMode(200.0f * screenScalingFactor, 200.0f * screenScalingFactor), "SFML works!");
 	platform.setIcon(window.getSystemHandle());
 
-	sf::CircleShape shape(window.getSize().x / 2);
+	sf::CircleShape shape(window.getSize().x);
 	shape.setFillColor(sf::Color::White);
 
 	sf::Texture shapeTexture;
