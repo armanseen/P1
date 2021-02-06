@@ -25,7 +25,8 @@ int main()
 	//window.setSize(sf::Vector2u(800, 600));
 
 	Texture BackGround, Ambulance, Bus, Car33, Car34, Firetruck, Limousine, Minicar, Police, Taxi, Van, Wood1,
-	Wood2, Wood3, Wood4, Wood5, Wood6, FrogT, FrogB, FrogL, FrogR, MenuBackGround, Day, Night, Easy, Medium, Hard;
+	Wood2, Wood3, Wood4, Wood5, Wood6, FrogT, FrogB, FrogL, FrogR, MenuBackGround, Day, Night, Easy, Medium, Hard,
+	Win , Lose;
 	//BackGround.loadFromFile("content/background.png");
 	BackGround.setSmooth(true);
 	Day.setSmooth(true);
@@ -74,6 +75,8 @@ int main()
 	FrogB.loadFromFile("content/frogb.png");
 	FrogL.loadFromFile("content/frogl.png");
 	FrogR.loadFromFile("content/frogr.png");
+	Win.loadFromFile("content/win.png");
+	Lose.loadFromFile("content/lose.png");
 	Day.loadFromFile("content/day.png");
 	Night.loadFromFile("content/night.png");
 	Easy.loadFromFile("content/easy.png");
@@ -129,6 +132,14 @@ int main()
 	Nt.setTexture(Night);
 	Nt.setPosition(Vector2f(817.f, 3.f));
 	Nt.setScale(Vector2f(0.2f, 0.2f));
+
+	Sprite Wn, Le;
+	Wn.setTexture(Win);
+	Wn.setPosition(Vector2f(125.f, 75.f));
+	Wn.setScale(Vector2f(0.8f, 0.8f));
+	Le.setTexture(Lose);
+	Le.setPosition(Vector2f(125.f, 75.f));
+	Le.setScale(Vector2f(0.8f, 0.8f));
 
 	Sprite Ey, Mm, Hd;
 	Ey.setTexture(Easy);
@@ -921,6 +932,8 @@ int main()
 			}
 			if (fty<11){
 				soundwin.play();
+				window.draw(Wn);
+				window.display();
 				sleep(milliseconds(3500));
 				break;
 			}
@@ -1221,6 +1234,8 @@ int main()
 				else if (54 - 4 < fty && 254 + 39.216 + 4 > fty)
 				{
 					soundgameover.play();
+					window.draw(Le);
+					window.display();
 					sleep(milliseconds(5000));
 					break;
 				}
@@ -1230,6 +1245,8 @@ int main()
 			if ((ftx >= l1c1 - 42.96 && ftx <= l1c1 + 80.26) && (fty > 555 && 555 + 39.438 > fty))
 			{
 				soundgameover.play();
+				window.draw(Le);
+				window.display();
 				sleep(milliseconds(5000));
 				break;
 			}
@@ -1237,6 +1254,8 @@ int main()
 			if ((ftx >= l1c2 - 42.96 && ftx <= l1c2 + 80.26) && (fty > 555 && 555 + 39.438 > fty))
 			{
 				soundgameover.play();
+				window.draw(Le);
+				window.display();
 				sleep(milliseconds(5000));
 				break;
 			}
@@ -1244,6 +1263,8 @@ int main()
 			if ((ftx >= l1c3 - 42.96 && ftx <= l1c3 + 80.26) && (fty > 555 && 555 + 39.438 > fty + 29.148))
 			{
 				soundgameover.play();
+				window.draw(Le);
+				window.display();
 				sleep(milliseconds(5000));
 				break;
 			}
@@ -1252,6 +1273,8 @@ int main()
 			if ((ftx >= l2c1 - 42.96 && ftx <= l2c1 + 135.665) && (fty > 502 && 502 + 41.452 > fty + 29.148))
 			{
 				soundgameover.play();
+				window.draw(Le);
+				window.display();
 				sleep(milliseconds(5000));
 				break;
 			}
@@ -1259,6 +1282,8 @@ int main()
 			if ((ftx >= l2c2 - 42.96 && ftx <= l2c2 + 135.665) && (fty > 502 && 502 + 41.452 > fty + 29.148))
 			{
 				soundgameover.play();
+				window.draw(Le);
+				window.display();
 				sleep(milliseconds(5000));
 				break;
 			}
@@ -1266,6 +1291,8 @@ int main()
 			if ((ftx >= l2c3 - 42.96 && ftx <= l2c3 + 135.665) && (fty > 502 && 502 + 41.452 > fty + 29.148))
 			{
 				soundgameover.play();
+				window.draw(Le);
+				window.display();
 				sleep(milliseconds(5000));
 				break;
 			}
@@ -1274,6 +1301,8 @@ int main()
 			if ((ftx >= l3c1 - 42.96 && ftx <= l3c1 + 79.24) && (fty > 454 && 454 + 35.856 > fty + 29.148))
 			{
 				soundgameover.play();
+				window.draw(Le);
+				window.display();
 				sleep(milliseconds(5000));
 				break;
 			}
@@ -1281,6 +1310,8 @@ int main()
 			if ((ftx >= l3c2 - 42.96 && ftx <= l3c2 + 79.24) && (fty > 454 && 454 + 35.856 > fty + 29.148))
 			{
 				soundgameover.play();
+				window.draw(Le);
+				window.display();
 				sleep(milliseconds(5000));
 				break;
 			}
@@ -1288,6 +1319,8 @@ int main()
 			if ((ftx >= l3c3 - 42.96 && ftx <= l3c3 + 79.24) && (fty > 454 && 454 + 35.856 > fty + 29.148))
 			{
 				soundgameover.play();
+				window.draw(Le);
+				window.display();
 				sleep(milliseconds(5000));
 				break;
 			}
@@ -1295,6 +1328,7 @@ int main()
 			if ((ftx >= l3c4 - 42.96 && ftx <= l3c4 + 79.24) && (fty > 454 && 454 + 35.856 > fty + 29.148))
 			{
 				soundgameover.play();
+				window.draw(Le);
 				sleep(milliseconds(5000));
 				break;
 			}
@@ -1303,6 +1337,8 @@ int main()
 			if ((ftx >= l5c1 - 42.96 && ftx <= l5c1 + 79.392) && (fty > 402.5 && 402.5 + 39.6 > fty + 29.148))
 			{
 				soundgameover.play();
+				window.draw(Le);
+				window.display();
 				sleep(milliseconds(5000));
 				break;
 			}
@@ -1310,6 +1346,8 @@ int main()
 			if ((ftx >= l5c2 - 42.96 && ftx <= l5c2 + 79.392) && (fty > 402.5 && 402.5 + 39.6 > fty + 29.148))
 			{
 				soundgameover.play();
+				window.draw(Le);
+				window.display();
 				sleep(milliseconds(5000));
 				break;
 			}
@@ -1318,6 +1356,8 @@ int main()
 			if ((ftx >= l4c1 - 42.96 && ftx <= l4c1 + 156.54) && (fty > 352.5 && 352.5 + 39.06 > fty + 29.148))
 			{
 				soundgameover.play();
+				window.draw(Le);
+				window.display();
 				sleep(milliseconds(5000));
 				break;
 			}
@@ -1325,6 +1365,8 @@ int main()
 			if ((ftx >= l4c2 - 42.96 && ftx <= l4c2 + 80.15) && (fty > 354 && 354 + 36.4 > fty + 29.148))
 			{
 				soundgameover.play();
+				window.draw(Le);
+				window.display();
 				sleep(milliseconds(5000));
 				break;
 			}
@@ -1332,6 +1374,8 @@ int main()
 			if ((ftx >= l4c3 - 42.96 && ftx <= l4c3 + 103.52) && (fty > 352 && 352 + 42.264 > fty + 29.148))
 			{
 				soundgameover.play();
+				window.draw(Le);
+				window.display();
 				sleep(milliseconds(5000));
 				break;
 			}
