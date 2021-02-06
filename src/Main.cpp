@@ -79,7 +79,35 @@ int main()
 	Easy.loadFromFile("content/easy.png");
 	Medium.loadFromFile("content/medium.png");
 	Hard.loadFromFile("content/hard.png");
+    SoundBuffer jump;
+	jump.loadFromFile("content/jump.wav");
+    SoundBuffer gameover;
+    gameover.loadFromFile("content/gameover.wav");
+	SoundBuffer win;
+    win.loadFromFile("content/win.wav");
+	SoundBuffer carhorn;
+    carhorn.loadFromFile("content/carhorn.wav");
+    SoundBuffer river;
+	river.loadFromFile("content/river.wav");
+    SoundBuffer street;
+	street.loadFromFile("content/street.wav");
+	Sound soundjump;
+	Sound soundgameover;
+	Sound soundwin;
+	Sound soundcarhorn;
+	Sound soundriver;
+	Sound soundstreet;
+	soundjump.setBuffer(jump);
+	soundwin.setBuffer(win);
+	soundgameover.setBuffer(gameover);
+	soundcarhorn.setBuffer(carhorn);
+	soundriver.setBuffer(river);
+	soundstreet.setBuffer(street);
+	int firo=0;
 	while(1){
+		if (firo==1){
+			break;
+		}
 	Sprite BG;
 	BG.setTexture(BackGround);
 	//sprite.setColor(sf::Color(255, 0, 0));
@@ -279,31 +307,6 @@ int main()
 	Time elapsed1 = clock.getElapsedTime();
 	srand(time(NULL));
 	int swit = rand() % 2;
-
-    SoundBuffer jump;
-	jump.loadFromFile("content/jump.wav");
-    SoundBuffer gameover;
-    gameover.loadFromFile("content/gameover.wav");
-	SoundBuffer win;
-    win.loadFromFile("content/win.wav");
-	SoundBuffer carhorn;
-    carhorn.loadFromFile("content/carhorn.wav");
-    SoundBuffer river;
-	river.loadFromFile("content/river.wav");
-    SoundBuffer street;
-	street.loadFromFile("content/street.wav");
-	Sound soundjump;
-	Sound soundgameover;
-	Sound soundwin;
-	Sound soundcarhorn;
-	Sound soundriver;
-	Sound soundstreet;
-	soundjump.setBuffer(jump);
-	soundwin.setBuffer(win);
-	soundgameover.setBuffer(gameover);
-	soundcarhorn.setBuffer(carhorn);
-	soundriver.setBuffer(river);
-	soundstreet.setBuffer(street);
 	while (window.isOpen())
 	{
 		while (window.pollEvent(event))
@@ -312,6 +315,7 @@ int main()
 			{
 				case Event::Closed:
 					window.close();
+					firo=1;
 					break;
 				case Event::KeyPressed:
 					if (menu == 1){
@@ -611,7 +615,7 @@ int main()
 			switch (Arr[0])
 			{
 				case 1:
-					if (countu==1){
+					if (countu==1 || countu==2){
 						soundjump.play();
 					}
 					flagak = 1;
@@ -640,7 +644,7 @@ int main()
 					}
 					break;
 				case 2:
-					if (countd==1){
+					if (countd==1 || countd==2){
 						soundjump.play();
 					}
 					flagak = 2;
@@ -669,7 +673,7 @@ int main()
 					}
 					break;
 				case 3:
-					if (countl==1){
+					if (countl==1 || countl==2){
 						soundjump.play();
 					}
 					flagak = 3;
@@ -718,7 +722,7 @@ int main()
 					}
 					break;
 				case 4:
-					if (countr==1){
+					if (countr==1 ||countr==2){
 						soundjump.play();
 					}
 					flagak = 4;
